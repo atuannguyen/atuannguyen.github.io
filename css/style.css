@@ -1,0 +1,84 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+  font-size: 19px;
+	color: black;
+font-family:Times;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+.row {
+	padding-top: 15px;
+}
+h3 .mono, ul li .mono {
+	font-size: 16px;
+
+}
+.reason {
+	font-size: 18px;
+}
+#research ul li {
+	padding-top: 15px;
+}
+.nav-link {
+	margin-right: 20px;
+	padding-right: 20px;
+	color: #880000;
+}
+
+.navbar-nav {
+	margin-left: 5px;
+}
+.navbar-nav a {
+	border-right: 1px solid #7F7F7F;
+}
+.slogan {
+	font-size: 18px;
+	text-align: right;
+}
+.slogan p {
+	padding-right: 30px;
+}
+.col-md-8 {
+	margin-top: 100px;
+}
+@media (max-width: 800px){
+	.col-md-8 {
+	margin-top: 10px;
+}
+}
+@media (max-width: 600px) {
+	.navbar-nav {
+		margin-bottom: -30px;	
+	}
+}
+@media (max-width: 800px) and (min-width:768px){
+	.navbar-nav {	
+	padding-bottom: 20px;
+	}
+}
+.title {
+	margin-left: 30px;
+}
+.social {
+	padding-left: 30px;
+	padding-bottom: 20px;
+}
+
+#google-maps iframe {
+ 	max-width: 90%;
+	margin-top: 20px;
+	margin-bottom: 40px;
+    }
+
+.footer {
+	margin-bottom: 40px;
+	font-size: 17px;
+}
+.reserved {
+	float: right;
+}
+#flag {
+	text-align: center;
+	visibility: hidden;
+}
