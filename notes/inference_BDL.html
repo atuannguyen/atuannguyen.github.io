@@ -13110,7 +13110,7 @@ div#notebook {
 \end{split}
 \end{equation}<p>Therefore, we need to maximize $\mathbb{E}_{q_\phi(\theta)}\left[\log p(D|\theta)\right]-\mathrm{KL}\left[q_\phi(\theta)||p(\theta)\right]$. The first term ensures that $q_\phi(\theta)$ explains the data well, while the second term encourages $q_\phi(\theta)$ to stay closed to the prior.</p>
 <p>If the KL term can be computed/approximated in analytically, we can use that directly in our computation. Otherwise, we can resort to MC sampling to approximate $\mathbb{E}_{q_\phi(\theta)}\left[\log q(\theta)-\log p(\theta)\right]$.</p>
-<p>If $q_\phi$ is reparameterizable, we can use the reparameterization trick to compute the gradient w.r.t. $\phi$. Otherwise, we can use other estimator like REINFORCE. For details, see my note on <a href="https://github.com/tuannguyen-oxford/notes/blob/main/variational_inference.ipynb">Variational Inference</a>.</p>
+<p>If $q_\phi$ is reparameterizable, we can use the reparameterization trick to compute the gradient w.r.t. $\phi$. Otherwise, we can use other estimator like REINFORCE. For details, see my note on <a href="variational_inference.html">Variational Inference</a>.</p>
 
 </div>
 </div>

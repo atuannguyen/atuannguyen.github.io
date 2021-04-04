@@ -2,7 +2,7 @@
 <html>
 <head><meta charset="utf-8" />
 
-<title>EM_and_VAE</title>
+<title>variational_inference</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13082,15 +13082,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Expectation-Maximization-and-Variational-Auto-Encoder">Expectation Maximization and Variational Auto-Encoder<a class="anchor-link" href="#Expectation-Maximization-and-Variational-Auto-Encoder">&#182;</a></h1>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Problem-Statement">Problem Statement<a class="anchor-link" href="#Problem-Statement">&#182;</a></h2><p>Suppose that we have a generative model $p_\theta(x,z) = p_\theta(z)p_\theta(x|z)$, with observed variable $x$ ($D=\{x_1,x_2,...,x_n\}$) and latent variable $z$. The goal is to learn the parameter $\theta$ to maximize the (marginal) log likelihood of the observed data (e.g. maximize $\log p_\theta(X) = \sum_{i=1}^n \log p_\theta(x_i) = \sum_{i=1}^n \log \int p_\theta(x_i|z)p_\theta(z)dz$ ).</p>
-<p>Expectation Maximization (EM) and Variational Auto-Encoder (VAE) are both methods to solve this problem.</p>
+<h1 id="Variational-Inference">Variational Inference<a class="anchor-link" href="#Variational-Inference">&#182;</a></h1><p>This article contains random notes about VI-related methods (not all about VI though)</p>
 
 </div>
 </div>
@@ -13098,36 +13090,21 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Expectation-Maximization">Expectation Maximization<a class="anchor-link" href="#Expectation-Maximization">&#182;</a></h2><p>EM is an iterative algorithm that consist of 2 steps: expectation and maximization. The algorithm is:</p>
-<ul>
-<li>Initialize $\theta^{(1)}$</li>
-<li>At step $t$:<ul>
-<li>Infer the posterior $p_{\theta^{(t)}}(z|x)$, $x \in D$</li>
-<li>Choose $\theta^{(t+1)}$ as:
-  \begin{equation}
-  \theta^{(t+1)} = argmax_\theta \sum_{x\in D} \mathbb{E}_{p_{\theta^{(t)}}(z|x)}[\log p_\theta(x,z)]
-  \end{equation}</li>
-</ul>
-</li>
-</ul>
-<p>By performing these two steps repeatedly, $\sum_{x\in D}\log p_\theta(x)$ will converge to a (local) maximum (show proof).</p>
-<p>Usually, the E step is to compute the expectation $\mathbb{E}_{p_{\theta^{(t)}}(z|x)}[\log p_\theta(x,z)]$, while the M step is to maximize this expectation. We will write the steps in this equivalent form, though, since it will relate to the VAE algorithm.</p>
-<p>This algorithm, however, requires $p_\theta(z|x)$ to be tractable. If it is not, we might have to use approximate distribution (similar to the below VAE).</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Variational-Auto-Encoder">Variational Auto-Encoder<a class="anchor-link" href="#Variational-Auto-Encoder">&#182;</a></h2><p>In VAE, we introduce an amortized inference network $q_\phi(z|x)$. The goal is to maximize the Evidence Lowever Bound:</p>
+<h2 id="Amortized-Variational-Inference-(VAE-example)">Amortized Variational Inference (VAE example)<a class="anchor-link" href="#Amortized-Variational-Inference-(VAE-example)">&#182;</a></h2><p>Suppose we have a generative model with $p_\theta(z,x)=p_\theta(z)p_\theta(x|z)$ with N observed instance $x_1,x_2,...,x_N$. Instead of having N variational distributions $q_1(z),q_2(z),...,q_N(z)$ for every instance, we can use an amortized infernece: $q_\phi(z|x)$ (e.g. there is a neural network parameterized by $\phi$ that takes $x$ as an input and produce the distribution parameters for $z$)</p>
+<p>The goal of optimization is, given a true data distribution $p(x)$, for $p_\theta(x)$ and $q_\phi(z|x)$ to approximate $p(x)$ and $p_\theta(z|x)$ respectively.</p>
+<p>The ELBO of $p_\theta(x)$ in this model is:
+\begin{equation}
+ELBO(x) = \log p_\theta(x)-\mathrm{KL}[q_\phi(z|x)||p_\theta(z|x)]= \mathbb{E}_{q_\phi(z|x)}[p_\theta(x|z)] + \mathrm{KL}[q_\phi(z|x)||p_\theta(z)]
+\end{equation}</p>
+<p>Maximizing $\mathbb{E}_{p(x)}[ELBO(x)]$ achieves our goal, since 
 \begin{equation}
 \begin{split}
-ELBO &amp;= \sum_{x \in D} \left[\log p_\theta(x) - KL[q_\phi(z|x)||p_\theta(z|x)]\right]\\
-&amp;= \sum_{x \in D} \left[\mathbb{E}_{q_\phi(z|x)}[\log p_\theta(x|z)] - KL[q_\phi(z|x)||p_\theta(z)]\right]
+\mathbb{E}_{p(x)}[ELBO(x)]&amp;=\mathbb{E}_{p(x)}[\log p_\theta(x)-\log p(x) + \log p(x) -\mathrm{KL}[q_\phi(z|x)||p_\theta(z|x)]] \\
+&amp;=\mathbb{E}_{p(x)}[\log p(x)]-\mathrm{KL}[p(x)||p_\theta(x)] - \mathbb{E}_{p(x)}[\mathrm{KL}[q_\phi(z|x)||p_\theta(z|x)]]
 \end{split}
-\end{equation}<p>By maximizing the $ELBO$ w.r.t. $\theta$ and $\phi$ simultaneously, we will also maximize $\sum_{x\in D} \log p_\theta(x)$ (which has lower bound $ELBO$), which is our goal. Also, $q_\phi(z|x)$ will approximate $p_\theta(z|x)$</p>
-<p>See my note on <a href="variational_inference.html">Variational Inference</a> for more details on how to estimate the gradient of $ELBO$ w.r.t. $\theta$ and $\phi$.</p>
+\end{equation}</p>
+<p>Therefore, the optimization problem is to maximize $\mathbb{E}_{p(x)}[\mathbb{E}_{q_\phi(z|x)}[p_\theta(x|z)] + \mathrm{KL}[q_\phi(z|x)||p_\theta(z)]]$ w.r.t. $\theta$ and $\phi$. In practice, we use minibatch of data to approximate this expectation.</p>
+<p>After training, we can use the generative model $p_\theta(z,x)$ to generate new data (e.g. images).</p>
 
 </div>
 </div>
@@ -13135,12 +13112,76 @@ ELBO &amp;= \sum_{x \in D} \left[\log p_\theta(x) - KL[q_\phi(z|x)||p_\theta(z|x
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="EM-and-VAE:-Similarity">EM and VAE: Similarity<a class="anchor-link" href="#EM-and-VAE:-Similarity">&#182;</a></h2><p>Em and VAE both solve the same problem (as described above). Moreover, there are (incredibly) more similarities between them.</p>
-<p>Let's look at the optimization w.r.t. $\phi$ and $\theta$ separately,</p>
-<ul>
-<li>When maximizing ELBO w.r.t. $\phi$, we minimize $KL[q_\phi(z|x)||p_\theta(z|x)]$. On another word, $q_\phi(z|x)$ will approximate $p_\theta(z|x)$. This is similar to step 1 of EM, but instead of inferring $p_\theta(z|x)$ directly, we approximate it by $q_\phi$.</li>
-<li>When maximizing ELBO w.r.t. $\theta$, we maximize $\mathbb{E}_{q_\phi(z|x)}[\log p_\theta(x|z)+\log p_\theta(z)]=\mathbb{E}_{q_\phi(z|x)}[\log p_\theta(x,z)]$. This is similar to step 2 of EM.</li>
-</ul>
+<h2 id="Gradient-estimation">Gradient estimation<a class="anchor-link" href="#Gradient-estimation">&#182;</a></h2><p>In order to train the network described above, we need to estimate the gradient (w.r.t. $\phi$) of a term of the form $\mathbb{E}_{q_\phi(z)}[f(z)]$</p>
+<p><strong><em>1.</em></strong> If $q_\phi(z)$ is parameterizable, i.e. we can rewrite $z=g(\epsilon,\phi), \epsilon \sim r(\epsilon)$.</p>
+<p>Then, we can rewrite $\mathbb{E}_{q_\phi(z)}[f(z)]$ to $\mathbb{E}_{r(\epsilon)}[f(g(\epsilon,\phi))]$ and the gradient can be computed easily using MC sampling (since it is a deterministic function of $\phi$)</p>
+<p><strong><em>2.</em></strong> If $q_\phi(z)$ is not parameterizable, we can use the REINFORCE estimator.</p>
+<p>Using the log-derivative trick, we have $\frac{\partial q_\phi(z)}{\partial \phi} = q_\phi(z)\frac{\partial \log q_\phi(z)}{\partial \phi}$</p>
+\begin{equation}
+\begin{split}
+\frac{\partial \mathbb{E}_{q_\phi(z)}[f(z)]}{\partial \phi} &amp;= \frac{\partial \int q_\phi(z)f(z)dz}{\partial \phi}\\
+&amp;= \int \frac{\partial q_\phi(z)f(z)}{\partial \phi}dz\\
+&amp;= \int f(z)q_\phi(z)\frac{\partial \log q_\phi(z)}{\partial \phi}dz\\
+&amp;= \mathbb{E}_{q_\phi(z)}\left[f(z)\frac{\partial \log q_\phi(z)}{\partial \phi}\right]
+\end{split}
+\end{equation}<p>And this can be approximated with MC sampling.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Tighter-bound-with-Importance-Sampling">Tighter bound with Importance Sampling<a class="anchor-link" href="#Tighter-bound-with-Importance-Sampling">&#182;</a></h2><p>Staring from an unbiased estimator of $p_\theta(x)=\mathbb{E}_{p_\theta(x)}[p_\theta(x|z)]$ by using importance sampling with a proposal $q_\phi(z|x)$:
+\begin{equation}
+\frac{1}{K}\sum_{i=1}^K \frac{p_\theta(x,z^i)}{q_\phi(z^i|x)}, \quad z^1,z^2,...,z^K \sim q_\phi(z|x)
+\end{equation}</p>
+<p>Since this is an unbiased estimator of $p_\theta(x)$, we have:
+\begin{equation}
+p(x) = \mathbb{E}_{z^{1..K}\sim q_\phi(z|x)}\left[\frac{1}{K}\sum_{i=1}^K \frac{p_\theta(x,z^i)}{q_\phi(z^i|x)}\right]
+\end{equation}</p>
+<p>Using Jensen Inequality, we have:
+\begin{equation}
+\begin{split}
+\log p(x) &amp;= \log \mathbb{E}_{z^{1..K}\sim q_\phi(z|x)}\left[\frac{1}{K}\sum_{i=1}^K \frac{p_\theta(x,z^i)}{q_\phi(z^i|x)}\right]\\
+&amp;\geq \mathbb{E}_{z^{1..K}\sim q_\phi(z|x)}\left[\log\frac{1}{K}\sum_{i=1}^K \frac{p_\theta(x,z^i)}{q_\phi(z^i|x)}\right]\\
+&amp;= ELBO
+\end{split}
+\end{equation}</p>
+<p>By setting $K=1$, we get the normal ELBO of variational inference described in the above section. The bound gets tighter when we increase $K$.</p>
+<p>Now we will estimate the gradient w.r.t. $\phi$ of this ELBO (note that the gradient w.r.t. $\theta$ is easy to compute).
+\begin{equation}
+\begin{split}
+&amp;\nabla_\phi\mathbb{E}_{z^{1..K}\sim q_\phi(z|x)}\left[\log\frac{1}{K}\sum_{i=1}^K \frac{p_\theta(x,z^i)}{q_\phi(z^i|x)}\right]\\
+&amp;= \nabla_\phi\int \log\frac{1}{K}\sum_{i=1}^K \frac{p_\theta(x,z^i)}{q_\phi(z^i|x)} \prod_{i=1}^K q_\phi(z^i|x) dz^{12..K}\\
+&amp;= \int \nabla_\phi\left[\log\frac{1}{K}\sum_{i=1}^K \frac{p_\theta(x,z^i)}{q_\phi(z^i|x)} \prod_{i=1}^K q_\phi(z^i|x)\right] dz^{12..K}\\
+&amp;= \int \nabla_\phi\left[\log\frac{1}{K}\sum_{i=1}^K \frac{p_\theta(x,z^i)}{q_\phi(z^i|x)}\right] \prod_{i=1}^K q_\phi(z^i|x) + \log\frac{1}{K}\sum_{i=1}^K \frac{p_\theta(x,z^i)}{q_\phi(z^i|x)} \nabla_\phi\prod_{i=1}^K q_\phi(z^i|x) \; dz^{12..K}\\
+&amp;= \int \nabla_\phi\left[\log\frac{1}{K}\sum_{i=1}^K \frac{p_\theta(x,z^i)}{q_\phi(z^i|x)}\right] \prod_{i=1}^K q_\phi(z^i|x) + \log\frac{1}{K}\sum_{i=1}^K \frac{p_\theta(x,z^i)}{q_\phi(z^i|x)} \prod_{i=1}^K q_\phi(z^i|x) \nabla_\phi\log\prod_{i=1}^K q_\phi(z^i|x) \; dz^{12..K}\\
+&amp;= \mathbb{E}_{z^{1..K}\sim q_\phi(z|x)}\left[\nabla_\phi\log\frac{1}{K}\sum_{i=1}^K \frac{p_\theta(x,z^i)}{q_\phi(z^i|x)} + \log\frac{1}{K}\sum_{i=1}^K \frac{p_\theta(x,z^i)}{q_\phi(z^i|x)} \nabla_\phi\log\prod_{i=1}^K q_\phi(z^i|x)\right]
+\end{split}
+\end{equation}</p>
+<p>Then, the REINFORCE estimator of the gradient is
+\begin{equation}
+\nabla_\phi\log\frac{1}{K}\sum_{i=1}^K f_{\phi,\theta}(x,z^i) + \log\frac{1}{K}\sum_{i=1}^K f_{\phi,\theta}(x,z^i) \nabla_\phi\log\prod_{i=1}^K q_\phi(z^i|x)
+\end{equation}
+where $f_{\phi,\theta}(x,z^i) =  \frac{p_\theta(x,z^i)}{q_\phi(z^i|x)}$</p>
+<p>The first term:
+\begin{equation}
+\begin{split}
+&amp;\nabla_\phi\log\frac{1}{K}\sum_{i=1}^K f_{\phi,\theta}(x,z^i)\\
+&amp;=\frac{1}{\sum_{i=1}^K f_{\phi,\theta}(x,z^i)}\sum_{i=1}^K \nabla_\phi f_{\phi,\theta}(x,z^i)\\
+&amp;=\sum_{i=1}^K w^i\nabla_\phi \log f_{\phi,\theta}(x,z^i)
+\end{split}
+\end{equation}
+where $w^i=\frac{f_{\phi,\theta}(x,z^i)}{\sum_{k=1}^K f_{\phi,\theta}(x,z^k)}$</p>
+<p>The second term:
+\begin{equation}
+\begin{split}
+&amp;\log\frac{1}{K}\sum_{i=1}^K f_{\phi,\theta}(x,z^i) \sum_{i=1}^K\nabla_\phi\log q_\phi(z^i|x)\\
+&amp;=\sum_{k=1}^K\left[\log\frac{1}{K}\sum_{i=1}^K f_{\phi,\theta}(x,z^i) \nabla_\phi\log q_\phi(z^k|x)\right]
+\end{split}
+\end{equation}</p>
+<p>The first term behaves nicely since it is a linear combination of the gradient of individual sample, with non-negative weights which sum up to 1. Therefore, the term is bounded by the bigest (and smallest) gradient componient. However, in the second term, the weight for individual-sample gradient is a (unbounded) constant. Therefore, this term is potentially unbounded with high variance; and additional measures should be taken to reduce the variance.</p>
 
 </div>
 </div>
