@@ -1,0 +1,22 @@
+"Torr":
+  - firstname: ["Philip", "Philip H. S.", "P.", "P. H. S.", "Philip HS"]
+    url: https://www.robots.ox.ac.uk/~phst/
+
+"Baydin":
+  - firstname: ["Atilim", "Atilim Gunes", "A. G.", "Atılım Güneş"]
+    url: https://gbaydin.github.io/
+
+"Gal":
+  - firstname: ["Yarin", "Y."]
+    url: http://www.cs.ox.ac.uk/people/yarin.gal/website/
+
+"Nguyen-Tang":
+  - firstname: ["Thanh", "T."]
+    url: https://thanhnguyentang.github.io/
+
+"Bach": 
+  - firstname: ["Johann Sebastian", "J. S."]
+    url: https://en.wikipedia.org/wiki/Johann_Sebastian_Bach
+
+  - firstname: ["Carl Philipp Emanuel", "C. P. E."]
+    url: https://en.wikipedia.org/wiki/Carl_Philipp_Emanuel_Bach

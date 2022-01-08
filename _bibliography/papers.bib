@@ -1,0 +1,102 @@
+---
+---
+
+@article{nguyen2021domain,
+  abbr={NeurIPS},
+  bibtex_show={true},
+  selected={true},
+  abstract={Domain generalization refers to the problem where we aim to train a model on
+data from a set of source domains so that the model can generalize to unseen target
+domains. Naively training a model on the aggregate set of data (pooled from all
+source domains) has been shown to perform suboptimally, since the information
+learned by that model might be domain-specific and generalize imperfectly to target
+domains. To tackle this problem, a predominant domain generalization approach
+is to learn some domain-invariant information for the prediction task, aiming at
+a good generalization across domains. In this paper, we propose a theoretically
+grounded method to learn a domain-invariant representation by enforcing the
+representation network to be invariant under all transformation functions among
+domains. We next introduce the use of generative adversarial networks to learn such
+domain transformations in a possible implementation of our method in practice.
+We demonstrate the effectiveness of our method on several widely used datasets for
+the domain generalization problem, on all of which we achieve competitive results
+with state-of-the-art models.},
+  pdf={NeurIPS_nguyen2021domain.pdf},
+  html={https://papers.nips.cc/paper/2021/hash/2a2717956118b4d223ceca17ce3865e2-Abstract.html},
+  title={Domain Invariant Representation Learning with Domain Density Transformations},
+  author={Nguyen, A. Tuan and Tran, Toan and Gal, Yarin and Baydin, At{\i}l{\i}m G{\"u}ne{\c{s}}},
+  journal={Advances in Neural Information Processing Systems 35 (NeurIPS)},
+  year={2021}
+}
+
+@article{nguyen2021clinical,
+abbr={AAAI},
+bibtex_show={true},
+selected={true},
+pdf={AAAI_nguyen2021clinical.pdf},
+html={https://ojs.aaai.org/index.php/AAAI/article/view/17097},
+title={Clinical Risk Prediction with Temporal Probabilistic Asymmetric Multi-Task Learning}, 
+volume={35}, url={https://ojs.aaai.org/index.php/AAAI/article/view/17097}, 
+abstract={Although recent multi-task learning methods have shown to be effective in improving the generalization of deep neural networks, they should be used with caution for safety-critical applications, such as clinical risk prediction. This is because even if they achieve improved task-average performance, they may still yield degraded performance on individual tasks, which may be critical (e.g., prediction of mortality risk). Existing asymmetric multi-task learning methods tackle this negative transfer problem by performing knowledge transfer from tasks with low loss to tasks with high loss. However, using loss as a measure of reliability is risky since low loss could result from overfitting. In the case of time-series prediction tasks, knowledge learned for one task (e.g., predicting the sepsis onset) at a specific timestep may be useful for learning another task (e.g., prediction of mortality) at a later timestep, but lack of loss at each timestep makes it difficult to measure the reliability at each timestep. To capture such dynamically changing asymmetric relationships between tasks in time-series data, we propose a novel temporal asymmetric multi-task learning model that performs knowledge transfer from certain tasks/timesteps to relevant uncertain tasks, based on the feature-level uncertainty. We validate our model on multiple clinical risk prediction tasks against various deep learning models for time-series prediction, which our model significantly outperforms without any sign of negative transfer. Further qualitative analysis of learned knowledge graphs by clinicians shows that they are helpful in analyzing the predictions of the model.}, 
+number={10}, 
+journal={Proceedings of the AAAI Conference on Artificial Intelligence}, 
+author={Nguyen, A. Tuan and Jeong, Hyewon and Yang, Eunho and Hwang, Sung Ju}, 
+year={2021}, month={May}, pages={9081-9091} }
+
+@article{nguyentang2021offline,
+  abbr={NeurIPS ORL},
+  bibtex_show={true},
+  html={https://offline-rl-neurips.github.io/2021/pdf/28.pdf},
+  title={Offline Neural Contextual Bandits: Pessimism, Optimization and Generalization},
+  author={Nguyen-Tang, Thanh and Gupta, Sunil and Nguyen, A. Tuan and Venkatesh, Svetha},
+  journal={Workshop on Offline Reinforcement Learning, NeurIPS},
+  year={2021}
+}
+
+
+@article{nguyen2021kl,
+  abbr={arxiv},
+  bibtex_show={true},
+  html={https://arxiv.org/abs/2106.07780},
+  abstract={Domain adaptation is an important problem and often needed for real-world ap-
+plications. In this problem, instead of i.i.d. datapoints, we assume that the source
+(training) data and the target (testing) data have different distributions. With that
+setting, the empirical risk minimization training procedure often does not perform
+well, since it does not account for the change in the distribution. A common
+approach in the domain adaptation literature is to learn a representation of the input
+that has the same distributions over the source and the target domain. However,
+these approaches often require additional networks and/or optimizing an adversarial
+(minimax) objective, which can be very expensive or unstable in practice. To tackle
+this problem, we first derive a generalization bound for the target loss based on
+the training loss and the reverse Kullback–Leibler (KL) divergence between the
+source and the target representation distributions. Based on this bound, we derive
+an algorithm that minimizes the KL term to obtain a better generalization to the
+target domain. We show that with a probabilistic representation network, the KL
+term can be estimated efficiently via minibatch samples without any additional
+network or a minimax objective. This leads to a theoretically sound alignment
+method which is also very efficient and stable in practice. Experimental results also
+suggest that our method outperforms other representation-alignment approaches.},
+  title={KL Guided Domain Adaptation},
+  author={Nguyen, A Tuan and Tran, Toan and Gal, Yarin and Torr, Philip HS and Baydin, At{\i}l{\i}m G{\"u}ne{\c{s}}},
+  journal={arXiv preprint arXiv:2106.07780},
+  year={2021}
+}
+
+@ARTICLE{9462324,
+  abbr={IEEE TMC},
+  bibtex_show={true},
+  html={https://ieeexplore.ieee.org/abstract/document/9462324},
+  author={Pham, Nhat and Dinh, Tuan and Kim, Taeho and Raghebi, Zohreh and Bui, Nam and Truong, Hoang and Nguyen, A. Tuan and Banaei-Kashani, Farnoush and Halbower, Ann and Dinh, Thang N. and Nguyen, Vp and Vu, Tam},
+
+  journal={IEEE Transactions on Mobile Computing}, 
+
+  title={Detection of Microsleep Events with a Behind-the-ear Wearable System}, 
+
+  year={2021},
+
+  volume={},
+
+  number={},
+
+  pages={1-1},
+
+  doi={10.1109/TMC.2021.3090829}}
