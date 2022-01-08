@@ -2,7 +2,7 @@
 layout: page
 permalink: /collaborators/
 title: Collaborators
-description: I am honored to have collaborated with the following researchers (and many more).
+description: I am honoured to have collaborated with the following researchers (and many others).
 nav: true
 ---
 
