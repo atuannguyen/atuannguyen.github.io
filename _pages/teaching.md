@@ -2,6 +2,7 @@
 layout: page
 permalink: /teaching/
 title: Teaching
+order: 4
 description: I was a TA (or demonstrator) for the following courses.
 nav: true
 ---
