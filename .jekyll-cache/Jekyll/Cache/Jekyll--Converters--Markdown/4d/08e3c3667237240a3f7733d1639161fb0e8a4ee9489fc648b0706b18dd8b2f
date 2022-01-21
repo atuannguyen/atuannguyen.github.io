@@ -1,8 +1,114 @@
-I"�L<!-- _pages/publications.md -->
+I"�b<!-- _pages/publications.md -->
 <div class="publications">
 For the most up-to-date list, please refer to my <a href="https://scholar.google.com/citations?user=V-guxukAAAAJ">Google Scholar</a>.
   <h2 class="year">2022</h2>
-  <ol class="bibliography"></ol>
+  <ol class="bibliography"><li><!-- _layouts/bib.html -->
+      <div class="row">
+        <div class="col-sm-2 abbr"><abbr class="badge">ICLR</abbr></div>
+
+        <!-- Entry bib key -->
+        <div id="nguyen2021kl" class="col-sm-8">
+        
+          <!-- Title -->
+          <div class="title">KL Guided Domain Adaptation</div>
+          <!-- Author -->
+          <div class="author">
+                  <em>Nguyen, A Tuan</em>,&nbsp;Tran, Toan,&nbsp;<a href="http://www.cs.ox.ac.uk/people/yarin.gal/website/">Gal, Yarin</a>,&nbsp;<a href="https://www.robots.ox.ac.uk/~phst/">Torr, Philip HS</a>,&nbsp;and <a href="https://gbaydin.github.io/">Baydin, Atılım Güneş</a>
+                  
+          </div>
+
+          <!-- Journal/Book title and date -->
+          <div class="periodical">
+            <em>International Conference on Learning Representations (ICLR)</em> 2022
+          </div>
+        
+          <!-- Links/Buttons -->
+          <div class="links">
+            <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
+            <a class="bibtex btn btn-sm z-depth-0" role="button">Bib</a>
+            <a href="https://openreview.net/forum?id=0JzqUlIVVDd" class="btn btn-sm z-depth-0" role="button">HTML</a>
+          </div>
+
+          <!-- Hidden abstract block -->
+          <div class="abstract hidden">
+            <p>Domain adaptation is an important problem and often needed for real-world ap-
+plications. In this problem, instead of i.i.d. datapoints, we assume that the source
+(training) data and the target (testing) data have different distributions. With that
+setting, the empirical risk minimization training procedure often does not perform
+well, since it does not account for the change in the distribution. A common
+approach in the domain adaptation literature is to learn a representation of the input
+that has the same distributions over the source and the target domain. However,
+these approaches often require additional networks and/or optimizing an adversarial
+(minimax) objective, which can be very expensive or unstable in practice. To tackle
+this problem, we first derive a generalization bound for the target loss based on
+the training loss and the reverse Kullback–Leibler (KL) divergence between the
+source and the target representation distributions. Based on this bound, we derive
+an algorithm that minimizes the KL term to obtain a better generalization to the
+target domain. We show that with a probabilistic representation network, the KL
+term can be estimated efficiently via minibatch samples without any additional
+network or a minimax objective. This leads to a theoretically sound alignment
+method which is also very efficient and stable in practice. Experimental results also
+suggest that our method outperforms other representation-alignment approaches.</p>
+          </div><!-- Hidden bibtex block -->
+          <div class="bibtex hidden">
+            <figure class="highlight"><pre><code class="language-bibtex" data-lang="bibtex"><span class="nc">@article</span><span class="p">{</span><span class="nl">nguyen2021kl</span><span class="p">,</span>
+  <span class="na">abbr</span> <span class="p">=</span> <span class="s">{ICLR}</span><span class="p">,</span>
+  <span class="na">bibtex_show</span> <span class="p">=</span> <span class="s">{true}</span><span class="p">,</span>
+  <span class="na">selected</span> <span class="p">=</span> <span class="s">{true}</span><span class="p">,</span>
+  <span class="na">html</span> <span class="p">=</span> <span class="s">{https://openreview.net/forum?id=0JzqUlIVVDd}</span><span class="p">,</span>
+  <span class="na">title</span> <span class="p">=</span> <span class="s">{KL Guided Domain Adaptation}</span><span class="p">,</span>
+  <span class="na">author</span> <span class="p">=</span> <span class="s">{Nguyen, A Tuan and Tran, Toan and Gal, Yarin and Torr, Philip HS and Baydin, At{\i}l{\i}m G{\"u}ne{\c{s}}}</span><span class="p">,</span>
+  <span class="na">journal</span> <span class="p">=</span> <span class="s">{International Conference on Learning Representations (ICLR)}</span><span class="p">,</span>
+  <span class="na">year</span> <span class="p">=</span> <span class="s">{2022}</span>
+<span class="p">}</span></code></pre></figure>
+          </div>
+        </div>
+      </div>
+</li>
+<li><!-- _layouts/bib.html -->
+      <div class="row">
+        <div class="col-sm-2 abbr"><abbr class="badge">ICLR</abbr></div>
+
+        <!-- Entry bib key -->
+        <div id="nguyentang2021offline" class="col-sm-8">
+        
+          <!-- Title -->
+          <div class="title">Offline Neural Contextual Bandits: Pessimism, Optimization and Generalization</div>
+          <!-- Author -->
+          <div class="author"><a href="https://thanhnguyentang.github.io/">Nguyen-Tang, Thanh</a>,&nbsp;Gupta, Sunil,&nbsp;
+                  <em>Nguyen, A. Tuan</em>,&nbsp;and Venkatesh, Svetha
+          </div>
+
+          <!-- Journal/Book title and date -->
+          <div class="periodical">
+            <em>International Conference on Learning Representations (ICLR)</em> 2022
+          </div>
+        
+          <!-- Links/Buttons -->
+          <div class="links">
+            <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
+            <a class="bibtex btn btn-sm z-depth-0" role="button">Bib</a>
+            <a href="https://openreview.net/forum?id=sPIFuucA3F" class="btn btn-sm z-depth-0" role="button">HTML</a>
+          </div>
+
+          <!-- Hidden abstract block -->
+          <div class="abstract hidden">
+            <p>Offline policy learning (OPL) leverages existing data collected a priori for policy optimization without any active exploration. Despite the prevalence and recent interest in this problem, its theoretical and algorithmic foundations in function approximation settings remain under-developed. In this paper, we consider this problem on the axes of distributional shift, optimization, and generalization in offline contextual bandits with neural networks. In particular, we propose a provably efficient offline contextual bandit with neural network function approximation that does not require any functional assumption on the reward. We show that our method provably generalizes over unseen contexts under a milder condition for distributional shift than the existing OPL works. Notably, unlike any other OPL method, our method learns from the offline data in an online manner using stochastic gradient descent, allowing us to leverage the benefits of online learning into an offline setting. Moreover, we show that our method is more computationally efficient and has a better dependence on the effective dimension of the neural network than an online counterpart. Finally, we demonstrate the empirical effectiveness of our method in a range of synthetic and real-world OPL problems.</p>
+          </div><!-- Hidden bibtex block -->
+          <div class="bibtex hidden">
+            <figure class="highlight"><pre><code class="language-bibtex" data-lang="bibtex"><span class="nc">@article</span><span class="p">{</span><span class="nl">nguyentang2021offline</span><span class="p">,</span>
+  <span class="na">abbr</span> <span class="p">=</span> <span class="s">{ICLR}</span><span class="p">,</span>
+  <span class="na">bibtex_show</span> <span class="p">=</span> <span class="s">{true}</span><span class="p">,</span>
+  <span class="na">html</span> <span class="p">=</span> <span class="s">{https://openreview.net/forum?id=sPIFuucA3F}</span><span class="p">,</span>
+  <span class="na">title</span> <span class="p">=</span> <span class="s">{Offline Neural Contextual Bandits: Pessimism, Optimization and Generalization}</span><span class="p">,</span>
+  <span class="na">author</span> <span class="p">=</span> <span class="s">{Nguyen-Tang, Thanh and Gupta, Sunil and Nguyen, A. Tuan and Venkatesh, Svetha}</span><span class="p">,</span>
+  <span class="na">journal</span> <span class="p">=</span> <span class="s">{International Conference on Learning Representations (ICLR)}</span><span class="p">,</span>
+  <span class="na">year</span> <span class="p">=</span> <span class="s">{2022}</span>
+<span class="p">}</span></code></pre></figure>
+          </div>
+        </div>
+      </div>
+</li></ol>
 
   <h2 class="year">2021</h2>
   <ol class="bibliography"><li><!-- _layouts/bib.html -->
@@ -121,50 +227,10 @@ with state-of-the-art models.</p>
 </li>
 <li><!-- _layouts/bib.html -->
       <div class="row">
-        <div class="col-sm-2 abbr"><abbr class="badge">NeurIPS ORL</abbr></div>
-
-        <!-- Entry bib key -->
-        <div id="nguyentang2021offline" class="col-sm-8">
-        
-          <!-- Title -->
-          <div class="title">Offline Neural Contextual Bandits: Pessimism, Optimization and Generalization</div>
-          <!-- Author -->
-          <div class="author"><a href="https://thanhnguyentang.github.io/">Nguyen-Tang, Thanh</a>,&nbsp;Gupta, Sunil,&nbsp;
-                  <em>Nguyen, A. Tuan</em>,&nbsp;and Venkatesh, Svetha
-          </div>
-
-          <!-- Journal/Book title and date -->
-          <div class="periodical">
-            <em>Workshop on Offline Reinforcement Learning, NeurIPS</em> May 2021
-          </div>
-        
-          <!-- Links/Buttons -->
-          <div class="links">
-            <a class="bibtex btn btn-sm z-depth-0" role="button">Bib</a>
-            <a href="https://offline-rl-neurips.github.io/2021/pdf/28.pdf" class="btn btn-sm z-depth-0" role="button">HTML</a>
-          </div>
-
-          <!-- Hidden bibtex block -->
-          <div class="bibtex hidden">
-            <figure class="highlight"><pre><code class="language-bibtex" data-lang="bibtex"><span class="nc">@article</span><span class="p">{</span><span class="nl">nguyentang2021offline</span><span class="p">,</span>
-  <span class="na">abbr</span> <span class="p">=</span> <span class="s">{NeurIPS ORL}</span><span class="p">,</span>
-  <span class="na">bibtex_show</span> <span class="p">=</span> <span class="s">{true}</span><span class="p">,</span>
-  <span class="na">html</span> <span class="p">=</span> <span class="s">{https://offline-rl-neurips.github.io/2021/pdf/28.pdf}</span><span class="p">,</span>
-  <span class="na">title</span> <span class="p">=</span> <span class="s">{Offline Neural Contextual Bandits: Pessimism, Optimization and Generalization}</span><span class="p">,</span>
-  <span class="na">author</span> <span class="p">=</span> <span class="s">{Nguyen-Tang, Thanh and Gupta, Sunil and Nguyen, A. Tuan and Venkatesh, Svetha}</span><span class="p">,</span>
-  <span class="na">journal</span> <span class="p">=</span> <span class="s">{Workshop on Offline Reinforcement Learning, NeurIPS}</span><span class="p">,</span>
-  <span class="na">year</span> <span class="p">=</span> <span class="s">{2021}</span>
-<span class="p">}</span></code></pre></figure>
-          </div>
-        </div>
-      </div>
-</li>
-<li><!-- _layouts/bib.html -->
-      <div class="row">
         <div class="col-sm-2 abbr"><abbr class="badge">arxiv</abbr></div>
 
         <!-- Entry bib key -->
-        <div id="nguyen2021kl" class="col-sm-8">
+        <div id="nguyen2021km" class="col-sm-8">
         
           <!-- Title -->
           <div class="title">KL Guided Domain Adaptation</div>
@@ -208,7 +274,7 @@ method which is also very efficient and stable in practice. Experimental results
 suggest that our method outperforms other representation-alignment approaches.</p>
           </div><!-- Hidden bibtex block -->
           <div class="bibtex hidden">
-            <figure class="highlight"><pre><code class="language-bibtex" data-lang="bibtex"><span class="nc">@article</span><span class="p">{</span><span class="nl">nguyen2021kl</span><span class="p">,</span>
+            <figure class="highlight"><pre><code class="language-bibtex" data-lang="bibtex"><span class="nc">@article</span><span class="p">{</span><span class="nl">nguyen2021km</span><span class="p">,</span>
   <span class="na">abbr</span> <span class="p">=</span> <span class="s">{arxiv}</span><span class="p">,</span>
   <span class="na">bibtex_show</span> <span class="p">=</span> <span class="s">{true}</span><span class="p">,</span>
   <span class="na">html</span> <span class="p">=</span> <span class="s">{https://arxiv.org/abs/2106.07780}</span><span class="p">,</span>

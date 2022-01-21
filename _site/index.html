@@ -146,6 +146,13 @@
             <div class="table-responsive">
               <table class="table table-sm table-borderless"> 
                 <tr>
+                  <th scope="row">Jan 21, 2022</th>
+                  <td>
+                    Two papers gets accepted to ICLR 2022!
+ 
+                  </td>
+                </tr> 
+                <tr>
                   <th scope="row">Dec 15, 2021</th>
                   <td>
                     Get an internship offer at Meta (Facebook). Going to San Francisco for a four-month internship!
@@ -181,6 +188,71 @@
           <div class="publications">
             <h2>Selected Publications</h2>
             <ol class="bibliography">
+<li>
+<!-- _layouts/bib.html -->
+      <div class="row">
+        <div class="col-sm-2 abbr"><abbr class="badge">ICLR</abbr></div>
+
+        <!-- Entry bib key -->
+        <div id="nguyen2021kl" class="col-sm-8">
+        
+          <!-- Title -->
+          <div class="title">KL Guided Domain Adaptation</div>
+          <!-- Author -->
+          <div class="author">
+                  <em>Nguyen, A Tuan</em>, Tran, Toan, <a href="http://www.cs.ox.ac.uk/people/yarin.gal/website/" target="_blank" rel="noopener noreferrer">Gal, Yarin</a>, <a href="https://www.robots.ox.ac.uk/~phst/" target="_blank" rel="noopener noreferrer">Torr, Philip HS</a>, and <a href="https://gbaydin.github.io/" target="_blank" rel="noopener noreferrer">Baydin, Atılım Güneş</a>
+                  
+          </div>
+
+          <!-- Journal/Book title and date -->
+          <div class="periodical">
+            <em>International Conference on Learning Representations (ICLR)</em> 2022
+          </div>
+        
+          <!-- Links/Buttons -->
+          <div class="links">
+            <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
+            <a class="bibtex btn btn-sm z-depth-0" role="button">Bib</a>
+            <a href="https://openreview.net/forum?id=0JzqUlIVVDd" class="btn btn-sm z-depth-0" role="button" target="_blank" rel="noopener noreferrer">HTML</a>
+          </div>
+
+          <!-- Hidden abstract block -->
+          <div class="abstract hidden">
+            <p>Domain adaptation is an important problem and often needed for real-world ap-
+plications. In this problem, instead of i.i.d. datapoints, we assume that the source
+(training) data and the target (testing) data have different distributions. With that
+setting, the empirical risk minimization training procedure often does not perform
+well, since it does not account for the change in the distribution. A common
+approach in the domain adaptation literature is to learn a representation of the input
+that has the same distributions over the source and the target domain. However,
+these approaches often require additional networks and/or optimizing an adversarial
+(minimax) objective, which can be very expensive or unstable in practice. To tackle
+this problem, we first derive a generalization bound for the target loss based on
+the training loss and the reverse Kullback–Leibler (KL) divergence between the
+source and the target representation distributions. Based on this bound, we derive
+an algorithm that minimizes the KL term to obtain a better generalization to the
+target domain. We show that with a probabilistic representation network, the KL
+term can be estimated efficiently via minibatch samples without any additional
+network or a minimax objective. This leads to a theoretically sound alignment
+method which is also very efficient and stable in practice. Experimental results also
+suggest that our method outperforms other representation-alignment approaches.</p>
+          </div>
+<!-- Hidden bibtex block -->
+          <div class="bibtex hidden">
+            <figure class="highlight"><pre><code class="language-bibtex" data-lang="bibtex"><span class="nc">@article</span><span class="p">{</span><span class="nl">nguyen2021kl</span><span class="p">,</span>
+  <span class="na">abbr</span> <span class="p">=</span> <span class="s">{ICLR}</span><span class="p">,</span>
+  <span class="na">bibtex_show</span> <span class="p">=</span> <span class="s">{true}</span><span class="p">,</span>
+  <span class="na">selected</span> <span class="p">=</span> <span class="s">{true}</span><span class="p">,</span>
+  <span class="na">html</span> <span class="p">=</span> <span class="s">{https://openreview.net/forum?id=0JzqUlIVVDd}</span><span class="p">,</span>
+  <span class="na">title</span> <span class="p">=</span> <span class="s">{KL Guided Domain Adaptation}</span><span class="p">,</span>
+  <span class="na">author</span> <span class="p">=</span> <span class="s">{Nguyen, A Tuan and Tran, Toan and Gal, Yarin and Torr, Philip HS and Baydin, At{\i}l{\i}m G{\"u}ne{\c{s}}}</span><span class="p">,</span>
+  <span class="na">journal</span> <span class="p">=</span> <span class="s">{International Conference on Learning Representations (ICLR)}</span><span class="p">,</span>
+  <span class="na">year</span> <span class="p">=</span> <span class="s">{2022}</span>
+<span class="p">}</span></code></pre></figure>
+          </div>
+        </div>
+      </div>
+</li>
 <li>
 <!-- _layouts/bib.html -->
       <div class="row">
@@ -327,7 +399,7 @@ with state-of-the-art models.</p>
 
     <!-- Footer -->    <footer class="sticky-bottom mt-5">
       <div class="container">
-        © Copyright 2022 A. Tuan  Nguyen.  Last updated: January 09, 2022. <br>
+        © Copyright 2022 A. Tuan  Nguyen.  Last updated: January 21, 2022. <br>
         Powered by <a href="http://jekyllrb.com/" target="_blank" rel="noopener noreferrer">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" target="_blank" rel="noopener noreferrer">al-folio</a> theme.
 </div>
     </footer>
