@@ -18,7 +18,7 @@ social: true  # includes social icons at the bottom of the page
 
 I am currently a DPhil student at the Department of Engineering Science, the University of Oxford, working with <a href="https://www.robots.ox.ac.uk/~phst/">Prof. Philip Torr</a>, <a href="https://www.robots.ox.ac.uk/~gunes/">Dr. Gunes Baydin</a> and <a href="http://www.cs.ox.ac.uk/people/yarin.gal/website/">Prof. Yarin Gal</a>. Before joining Oxford, I pursued my Master's degree at Korea Advanced Institute of Science and Technology. During that time, I worked as a research assistant at KAIST's <a href="https://www.mlai-kaist.com/" target="_blank">MLAI Group</a>, supervised by Prof. Sung Ju Hwang.
 
-My research interests include Representation Learning, Domain Adaptation/Generalization, Robustness, Efficient Inference, Bayesian Deep Learning, Deep Bayesian Learning and Deep Generative Models.
+My research interests include (but not limited to) Representation Learning, Domain Adaptation/Generalization, Robustness, Transferability of Robustness, and Privacy-Preserving Machine Learning methods.
 
 My CV is available upon request. 
 
