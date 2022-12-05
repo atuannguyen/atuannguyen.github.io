@@ -50,7 +50,7 @@
                   <b><u>{{author.first}} {{author.last}}</u></b>,&nbsp;
                 {%- else -%}
                   {% if coauthor_url -%}
-                    <a href="{{coauthor_url}}">{{author.first}} {{author.last}}</a>,&nbsp;
+                    <a style="color:inherit" href="{{coauthor_url}}">{{author.first}} {{author.last}}</a>,&nbsp;
                   {%- else -%}
                     {{author.first}} {{author.last}},&nbsp;
                   {%- endif -%}
@@ -60,14 +60,14 @@
                   and <b><u>{{author.first}} {{author.last}}</u></b>
                 {% else -%}
                   {%- if coauthor_url -%}
-                    and <a href="{{coauthor_url}}">{{author.first}} {{author.last}}</a>
+                    and <a style="color:inherit" href="{{coauthor_url}}">{{author.first}} {{author.last}}</a>
                   {% else -%}
                     and {{author.first}} {{author.last}}
                   {%- endif -%}
                 {%- endif -%}
               {%- endunless -%}
             {%- endif -%}
-          {%- endfor %}
+          {%- endfor %}§
           </div>
 
           <!-- Journal/Book title and date -->
