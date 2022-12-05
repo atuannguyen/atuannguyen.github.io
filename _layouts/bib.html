@@ -42,7 +42,7 @@
               {%- if author_is_self %}
                 <em>{{author.first}} {{author.last}}</em>
               {%- else -%}
-                {{author.last}}, {{author.first}}
+                {{author.first}} {{author.last}}
               {%- endif -%}
             {%- else -%}
               {%- unless forloop.last -%}
@@ -52,7 +52,7 @@
                   {% if coauthor_url -%}
                     <a href="{{coauthor_url}}">{{author.first}} {{author.last}}</a>,&nbsp;
                   {%- else -%}
-                    {{author.last}}, {{author.first}},&nbsp;
+                    {{author.first}} {{author.last}},&nbsp;
                   {%- endif -%}
                 {%- endif -%}
               {%- else -%}
