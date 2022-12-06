@@ -435,7 +435,7 @@ footer.sticky-bottom {
         a {
           border-bottom: 1px dashed;
           &:hover {
-              border-bottom-style: solid;
+              border-bottom: solid var(--global-theme-color);
               text-decoration: none;
           }
         }
