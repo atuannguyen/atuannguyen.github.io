@@ -40,27 +40,27 @@
             
             {%- if forloop.length == 1 -%}
               {%- if author_is_self %}
-                <b><u>{{author.first}} {{author.last}}</u></b>
+                <em>{{author.first}} {{author.last}}</em>
               {%- else -%}
                 {{author.first}} {{author.last}}
               {%- endif -%}
             {%- else -%}
               {%- unless forloop.last -%}
                 {% if author_is_self %}
-                  <b><u>{{author.first}} {{author.last}}</u></b>,&nbsp;
+                  <em>{{author.first}} {{author.last}}</em>,&nbsp;
                 {%- else -%}
                   {% if coauthor_url -%}
-                    <a style="color:inherit" href="{{coauthor_url}}">{{author.first}} {{author.last}}</a>,&nbsp;
+                    <a href="{{coauthor_url}}">{{author.first}} {{author.last}}</a>,&nbsp;
                   {%- else -%}
                     {{author.first}} {{author.last}},&nbsp;
                   {%- endif -%}
                 {%- endif -%}
               {%- else -%}
                 {% if author_is_self -%}
-                  and <b><u>{{author.first}} {{author.last}}</u></b>
+                  and <em>{{author.first}} {{author.last}}</em>
                 {% else -%}
                   {%- if coauthor_url -%}
-                    and <a style="color:inherit" href="{{coauthor_url}}">{{author.first}} {{author.last}}</a>
+                    and <a href="{{coauthor_url}}">{{author.first}} {{author.last}}</a>
                   {% else -%}
                     and {{author.first}} {{author.last}}
                   {%- endif -%}
