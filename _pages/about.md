@@ -20,6 +20,6 @@ I am currently a DPhil student at the Department of Engineering Science, the Uni
 
 My research interests include (but not limited to) Representation Learning, Domain Adaptation/Generalization, Robustness, Transferability of Robustness, and Privacy-Preserving Machine Learning methods.
 
-My CV is available upon request. 
+My (might-be-outdated) resume is available <a href="assets/resume.pdf">here</a>. 
 
-Also, I am always interested in internship and collaboration opportunities. Please reach out to me via email: tuan at robots dot ox dot ac dot uk
+You can reach out to me via email: a.tuan.nguyen at outlook.com
