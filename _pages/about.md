@@ -16,9 +16,7 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-I am currently a DPhil student at the Department of Engineering Science, the University of Oxford, working with <a href="https://www.robots.ox.ac.uk/~phst/">Prof. Philip Torr</a>, <a href="https://www.robots.ox.ac.uk/~gunes/">Dr. Gunes Baydin</a> and <a href="http://www.cs.ox.ac.uk/people/yarin.gal/website/">Prof. Yarin Gal</a>. Before joining Oxford, I pursued my Master's degree at Korea Advanced Institute of Science and Technology. During that time, I worked as a research assistant at KAIST's <a href="https://www.mlai-kaist.com/" target="_blank">MLAI Group</a>, supervised by Prof. Sung Ju Hwang.
-
-My research interests include (but not limited to) Representation Learning, Domain Adaptation/Generalization, Robustness, Transferability of Robustness, and Privacy-Preserving Machine Learning methods.
+I am a Research Scientist at Meta, working on large multi-modal language models. Prior to joining Meta, I obtained a PhD (DPhil) in Machine Learning from the University of Oxford. During my time at Oxford, I was fortunate to have worked with <a href="https://www.robots.ox.ac.uk/~phst/">Prof. Philip Torr</a>, <a href="http://www.cs.ox.ac.uk/people/yarin.gal/website/">Prof. Yarin Gal</a>, and <a href="https://www.robots.ox.ac.uk/~gunes/">Dr. Gunes Baydin</a>. My PhD thesis focused on addressing the distribution shift problem in machine learning. Before my doctoral studies, I pursued a Master's degree at Korea Advanced Institute of Science and Technology. During this period, I worked as a research assistant at KAIST's <a href="https://www.mlai-kaist.com/" target="_blank">MLAI Group</a>, supervised by Prof. Sung Ju Hwang.
 
 My (might-be-outdated) resume is available <a href="assets/pdf/resume.pdf">here</a>. 
 
