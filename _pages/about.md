@@ -3,7 +3,7 @@ layout: about
 title: About
 order: 1
 permalink: /
-subtitle: <a href='/'>DPhil Student, University of Oxford</a> <br>Oxford, United Kingdom
+subtitle: <a href='/'>Research Scientist, Meta</a> <br>New York, NY, United States
 
 profile:
   align: right
