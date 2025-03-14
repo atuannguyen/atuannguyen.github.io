@@ -4,6 +4,7 @@
 @article{nguyen2024ucap,
   abbr={ECCV},
   selected={true},
+  html={https://eccv.ecva.net/virtual/2024/poster/2005},
   bibtex_show={true},
   pdf={nguyen2024ucap.pdf},
   abstract={This paper addresses a significant limitation that prevents Contrastive Language-Image Pretrained Models (CLIP) from achieving optimal performance on downstream image classification tasks. The key problem with CLIP-style zero-shot classification is that it requires domain-specific context in the form of prompts to better align the class descriptions to the downstream data distribution. In particular, prompts for vision-language models are domain-level texts (e.g., ``a centered satellite image of ...'') which, together with the class names, are fed into the text encoder to provide more context for the downstream dataset. These prompts are typically manually tuned, which is time consuming and often sub-optimal. To overcome this bottleneck, this paper proposes uCAP, a method to automatically learn domain-specific prompts/contexts using only unlabeled in-domain images. We achieve this by modeling the generation of images given the class names and a domain-specific prompt with an unsupervised likelihood distribution, and then performing inference of the prompts. We validate the proposed method across various models and datasets, showing that uCAP consistently outperforms manually tuned prompts and related baselines on the evaluated datasets: ImageNet, CIFAR-10, CIFAR-100, OxfordPets (up to 2\%), SUN397 (up to 5\%), and Caltech101 (up to 3\%).},
