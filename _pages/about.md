@@ -20,6 +20,4 @@ I am a Quant Researcher at Jane Street, working on quant finance and related mac
 
 I obtained a PhD (DPhil) in Machine Learning from the University of Oxford. During my time at Oxford, I was fortunate to have worked with <a href="https://www.robots.ox.ac.uk/~phst/">Prof. Philip Torr</a>, <a href="http://www.cs.ox.ac.uk/people/yarin.gal/website/">Prof. Yarin Gal</a>, and <a href="https://www.robots.ox.ac.uk/~gunes/">Dr. Gunes Baydin</a>. My PhD thesis focused on addressing the distribution shift problem in machine learning. Before my doctoral studies, I pursued a Master's degree at Korea Advanced Institute of Science and Technology. During this period, I worked as a research assistant at KAIST's <a href="https://www.mlai-kaist.com/" target="_blank">MLAI Group</a>, supervised by Prof. Sung Ju Hwang.
 
-My (might-be-outdated) resume is available <a href="assets/pdf/resume.pdf">here</a>. 
-
-You can reach out to me via email: a.tuan.nguyen at outlook.com
+My (might-be-outdated) resume is available <a href="assets/pdf/resume.pdf">here</a>. You can reach out to me via email: a.tuan.nguyen at outlook.com
