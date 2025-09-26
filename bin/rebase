@@ -1,3 +1,0 @@
-git fetch origin main
-git rebase origin/main
-git push --force-with-lease origin robots
