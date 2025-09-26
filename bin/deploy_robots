@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+./bin/deploy -s robots -d gh-pages-robots
+
+git checkout gh-pages-robots
+
+
