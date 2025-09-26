@@ -4,4 +4,6 @@
 
 git checkout gh-pages-robots
 
+scp -r ./* robots-login:/homes/55/tuan/WWW/
 
+git checkout robots
