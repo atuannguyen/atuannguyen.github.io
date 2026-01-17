@@ -7,9 +7,9 @@ subtitle: <a href='https://www.janestreet.com'>Researcher, Jane Street</a> <br>N
 
 profile:
   align: right
-  image: ava.jpg
+  image:
   address: >
-    <p>"The past is just practice"</p>
+
 
 news: true  # includes a list of news items
 selected_papers: true # includes a list of papers marked as "selected={true}"
